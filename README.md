@@ -1,5 +1,7 @@
 # CH340-fan-control
 
+![X96 Air with an AC Infinity USB fan](https://github.com/danboid/CH340-fan-control/blob/main/X96-Air+fan.jpg)
+
 
 ## What is this?
 
@@ -18,6 +20,8 @@ Fans can be annoying if they're always on so you can use this script in conjunct
 ## How do I wire up my USB fan to the relay adapter?
 
 Connect the grey (or red) wire from the fan into the COM (middle) terminal of the relay module and connect the grey (or red) wire of the USB header to the NO terminal of the relay. No soldering is required, it is usually enough to screw the wires into the terminals.
+
+![Relay and USB fan](https://github.com/danboid/CH340-fan-control/blob/main/CH340+fan.jpg)
 
 
 ## Do I need to use two USB ports?
