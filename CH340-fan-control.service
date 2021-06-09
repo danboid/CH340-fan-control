@@ -1,0 +1,8 @@
+[Unit]
+Description=CH340-fan-control
+
+[Service]
+ExecStart=/usr/local/bin/CH340-fan-control.py
+
+[Install]
+WantedBy=multi-user.target
