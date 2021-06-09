@@ -20,6 +20,11 @@ Fans can be annoying if they're always on so you can use this script in conjunct
 Connect the grey (or red) wire from the fan into the COM (middle) terminal of the relay module and connect the grey (or red) wire of the USB header to the NO terminal of the relay. No soldering is required, it is usually enough to screw the wires into the terminals.
 
 
+## Do I need to use two USB ports?
+
+Whilst I have been successful in connecting and powrering a USB hub, my relay and a fan from a single USB port on my X96 Air Q1000 whilst keeping the CPU temp below 85 degrees under full load, you will get better results if you give the fan a dedicated USB port.
+
+
 ## How do I install and run this script?
 
 This script requires Python 3 and the Python USB modules. You almost certainly already have Python 3 installed already. To install the USB modules run:
@@ -35,10 +40,15 @@ Under Ubuntu and Debian based distros or:
 
 Under Arch and Manjaro.
 
-Copy `CH340-fan-control.py` into `/usr/local/bin` and copy `CH340-fan-control.service` into `/etc/systemd/system` and make sure its executable with:
+Copy `CH340-fan-control.py` into `/usr/local/bin` and copy `CH340-fan-control.service` into `/etc/systemd/system` and make sure they're executable:
 
 ```
+$ git clone https://github.com/danboid/CH340-fan-control.git
+$ cd CH340-fan-control
+$ sudo cp CH340-fan-control.py /usr/local/bin
+$ sudo cp CH340-fan-control.service /etc/systemd/system
 $ sudo chmod u+x /etc/systemd/system/CH340-fan-control.service
+$ sudo chmod u+x /usr/local/bin/CH340-fan-control.py
 ```
 
 Start the service:
