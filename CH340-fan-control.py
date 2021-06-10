@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-# QinHeng Electronics CH-340 / HL-340 USB relay CPU fan controller script
+# QinHeng Electronics CH-340 / HL-340 USB relay fan controller script
+
+# By Dan MacDonald, 2021
 
 # You must install the python USB modules to run this:
 
@@ -8,16 +10,11 @@
 # or
 # pacman -S python-pyusb
 
-# By Dan MacDonald, 2021
-
 # To run with pyusb debugging:
 #
 #   PYUSB_DEBUG=debug python relay.py
 
-import subprocess
-import time
-import usb.core
-import usb.util
+import subprocess, time, usb.core, usb.util
 
 dev = usb.core.find(idVendor=0x1a86, idProduct=0x7523)
 

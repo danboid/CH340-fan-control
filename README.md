@@ -29,9 +29,9 @@ Connect the grey (or red) wire from the fan into the COM (middle) terminal of th
 Whilst I have been successful in connecting and powrering a USB hub, my relay and a fan all from a single USB port on my X96 Air Q1000 whilst keeping the CPU temp below 85 degrees under full load, you will get better results if you give the fan a dedicated USB port.
 
 
-## How do I install and run this script?
+## How do I use these scripts?
 
-This script requires Python 3 and the Python USB modules. You will very likely have Python 3 installed already. To install the python USB modules run:
+These scripts require Python 3 and the Python USB modules. You will very likely have Python 3 installed already. To install the python USB modules run:
 
 ```
 $ sudo apt install python-usb
@@ -43,6 +43,8 @@ Under Ubuntu and Debian based distros, or:
 ```
 
 Under Arch and Manjaro.
+
+You can manually start and stop your fan with **CH340-interactive.py**. Installing **CH340-fan-control.py** involves a few more steps.
 
 Copy `CH340-fan-control.py` into `/usr/local/bin` and copy `CH340-fan-control.service` into `/etc/systemd/system` and make sure they're executable:
 
@@ -65,4 +67,4 @@ Enable it to run at boot:
 
 ```
 $ sudo systemctl enable CH340-fan-control
-```
+``` 
