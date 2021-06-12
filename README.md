@@ -44,7 +44,13 @@ Under Ubuntu and Debian based distros, or:
 
 Under Arch and Manjaro.
 
-You can manually start and stop your fan with **CH340-interactive.py**. Installing **CH340-fan-control.py** involves a few more steps.
+You can manually start and stop your fan using **CH340-interactive.py:**
+
+```
+$ sudo ./CH340-interactive.py -on
+```
+
+Installing **CH340-fan-control.py** involves a few more steps.
 
 Copy `CH340-fan-control.py` into `/usr/local/bin` and copy `CH340-fan-control.service` into `/etc/systemd/system` and make sure they're executable:
 
@@ -68,3 +74,5 @@ Enable it to run at boot:
 ```
 $ sudo systemctl enable CH340-fan-control
 ``` 
+
+Note that you cannot use **CH340-interactive.py** whilst the **CH340-fan-control** service is running. You must stop the **CH340-fan-control** service first before you can use **CH340-interactive.py**.
